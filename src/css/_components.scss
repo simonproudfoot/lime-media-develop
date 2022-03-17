@@ -1,0 +1,22 @@
+// Add any custom components here
+@import "./carousel";
+
+.card {
+    * {
+        transition-duration: 0.4s;
+    }
+    &:hover {
+        .card__title {
+            @apply bg-lime text-white;
+       //     margin-top: 4px;
+        }
+        img {
+         //   margin-top: -2px;
+        }
+        svg * {
+            fill: #8dc63f;
+        }
+    }
+}
+
+

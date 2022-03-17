@@ -1,0 +1,38 @@
+// Add any custom base CSS can go here
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+// Foundation
+// =≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠
+html {
+  @apply antialiased;
+  font-size: 15px;
+  text-rendering: optimizeLegibility;
+  font-family: "Comfortaa", system-ui, sans-serif;
+  @screen md {
+    font-size: 18px;
+  }
+}
+.btn-primary {
+  @apply px-4 bg-accent rounded-lg  transition;
+}
+input::placeholder {
+  @apply text-accent;
+}
+a {
+  cursor: pointer;
+}
+
+.menu {
+  position: relative;
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+.cardShadow {
+  box-shadow: 0 0 20px 0 rgba(43, 49, 55, 0.2);
+}
+
+.headerTitle {
+bottom: 20px;
+}
