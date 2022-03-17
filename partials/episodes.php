@@ -5,7 +5,7 @@
 <!-- mobile -->
 <div class="relative text-white md:hidden cursor-pointer my-5">
     <div :class="seasonDropdown ? 'bg-turqDark' : 'bg-turq'" class=" w-full px-5 py-4 relative rounded-lg" @click="seasonDropdown = !seasonDropdown">
-        <span>Filter by</span> 
+        <span>Filter by</span>
         <img src="<?php bloginfo('template_directory'); ?>/img/icon-arrow.svg" class="absolute  rotate-360 right-7 top-6">
     </div>
     <div v-if="seasonDropdown" class="rounded-lg bg-greentransparent text-white absolute w-full">
@@ -25,8 +25,7 @@
 </div>
 <div v-if="currentShow && currentShow.acf" class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2 md:gap-4">
     <div v-for="show in currentShow.acf.epsodes" v-if="show.episode.series == selectedSeason">
-        <!-- v-if="show.episode.series == currentShowSeasons" -->
-        <div class="card">
+        <div class="card cursor-pointer" @click="selectEpisode(show.episode.episode_title, show.episode.images, show.episode.episode_number)">
             <div class="card__imageWrap rounded-lg overflow-hidden bg-grey bg-brandgrey">
                 <img :src="show.episode.episode_image.sizes.medium_large" :alt="show.episode.episode_image.alt" class="w-full w-full object-cover h-40" />
             </div>
@@ -40,8 +39,8 @@
                 </svg>
                 <div class="relative text-xs">
                     <p>Episode {{show.episode.episode_number}}</p>
-                    <span class="text-turq absolute right-0 top-0 ">
-                        <div class="inline-block leading-tight flex "><img height="10" width="12" class="inline-block mr-1" src="<?php bloginfo('template_directory'); ?>/img/icon-image.svg">12</div>
+                    <span v-show="show.episode.images.length" class="text-turq absolute right-0 top-0 ">
+                        <div class="inline-block leading-tight flex "><img height="10" width="12" class="inline-block mr-1" src="<?php bloginfo('template_directory'); ?>/img/icon-image.svg">{{show.episode.images.length}}</div>
                     </span>
                 </div>
                 {{show.episode.episode_title}}

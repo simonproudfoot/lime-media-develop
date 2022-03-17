@@ -5,12 +5,23 @@ new Vue({
   el: document.getElementById("app"),
   data: function () {
     return {
+
+      selectedItems: {
+        images: [],
+        pressReleases: [],
+        pressPacks: []
+      },
       mobileMenuOpen: false,
       testMessage: 'Hello world!',
       windowWidth: 0,
       paddingLeft: 0,
       shows: [],
       currentShow: null,
+      selectedEpisode: {
+        number: null,
+        title: '',
+        images: []
+      },
       seasonDropdown: false,
       currentShowSeasons: [],
       selectedSeason: '',
@@ -56,6 +67,7 @@ new Vue({
   },
   components: { slick },
   computed: {
+
     threeMonths() {
       const d = new Date();
       console.log(d.toLocaleDateString());
@@ -69,7 +81,6 @@ new Vue({
     pageSlug() {
       return location.pathname.split('/').slice(1)[1]
     },
-
 
     visibleShows() {
       let published = this.shows.filter(x => x.status == 'publish')
@@ -85,8 +96,43 @@ new Vue({
       return this.mobileMenuOpen && this.windowWidth < 770 ? true : false
     },
   },
+
+
   methods: {
-    selectSeasonMobile(season){
+
+    selectImage(show, imageId) {
+      console.log(show,+'-'+imageId)
+      // console.log('Adding image', imageId + ' to ' + show)
+      // this.selectedItems.images.push({show: imageId})
+      //  console.log(this.selectedItems.images[show])
+    },
+    selectEpisode(title, images, number) {
+      this.selectedEpisode.title = title
+      this.selectedEpisode.images = images
+      this.selectedEpisode.number = number
+      console.log(this.selectedEpisode.images)
+      setTimeout(() => {
+        if (title) {
+          $('#imagescarousel').slick({
+            infinite: true,
+            slidesToShow: 1,
+            autoplay: true,
+            autoplaySpeed: 2000,
+            dots: false,
+            infinite: true,
+            speed: 500,
+            fade: true,
+            cssEase: 'linear',
+            arrows: true,
+          });
+        } else {
+          $('#imagescarousel').slick('unslick');
+        }
+      }, 1000);
+
+
+    },
+    selectSeasonMobile(season) {
       this.selectedSeason = season
       setTimeout(() => {
         this.seasonDropdown = false

@@ -16458,12 +16458,22 @@ new Vue({
   el: document.getElementById("app"),
   data: function data() {
     return {
+      selectedItems: {
+        images: [],
+        pressReleases: [],
+        pressPacks: []
+      },
       mobileMenuOpen: false,
       testMessage: 'Hello world!',
       windowWidth: 0,
       paddingLeft: 0,
       shows: [],
       currentShow: null,
+      selectedEpisode: {
+        number: null,
+        title: '',
+        images: []
+      },
       seasonDropdown: false,
       currentShowSeasons: [],
       selectedSeason: '',
@@ -16548,6 +16558,32 @@ new Vue({
     }
   },
   methods: {
+    selectImage: function selectImage(show, imageId) {
+      console.log(show, +'-' + imageId); // console.log('Adding image', imageId + ' to ' + show)
+      // this.selectedItems.images.push({show: imageId})
+      //  console.log(this.selectedItems.images[show])
+    },
+    selectEpisode: function selectEpisode(title, images, number) {
+      this.selectedEpisode.title = title;
+      this.selectedEpisode.images = images;
+      this.selectedEpisode.number = number;
+      console.log(this.selectedEpisode.images);
+      setTimeout(function () {
+        if (title) {
+          var _$$slick2;
+
+          jquery__WEBPACK_IMPORTED_MODULE_0___default()('#imagescarousel').slick((_$$slick2 = {
+            infinite: true,
+            slidesToShow: 1,
+            autoplay: true,
+            autoplaySpeed: 2000,
+            dots: false
+          }, _defineProperty(_$$slick2, "infinite", true), _defineProperty(_$$slick2, "speed", 500), _defineProperty(_$$slick2, "fade", true), _defineProperty(_$$slick2, "cssEase", 'linear'), _defineProperty(_$$slick2, "arrows", true), _$$slick2));
+        } else {
+          jquery__WEBPACK_IMPORTED_MODULE_0___default()('#imagescarousel').slick('unslick');
+        }
+      }, 1000);
+    },
     selectSeasonMobile: function selectSeasonMobile(season) {
       var _this3 = this;
 

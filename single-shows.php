@@ -1,4 +1,5 @@
 <?php get_header(); ?>
+<?php get_template_part('partials/imagesPopup'); ?>
 <main class="-mt-52 pb-32 z-30 relative">
     <div class="container max-w-7xl">
         <div class="lg:flex">
@@ -77,7 +78,7 @@
             <h1 class="font-bold text-2xl">Images</h1>
         </div>
         <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2 md:gap-4">
-            <div class="card__imageWrap rounded-lg overflow-hidden bg-grey bg-brandgrey">
+            <div class="card__imageWrap rounded-lg overflow-hidden bg-grey bg-brandgrey imageSelector">
                 <img src="<?php the_post_thumbnail_url() ?>" alt="<?php the_post_thumbnail_caption() ?>" class="w-full w-full object-cover h-40">
             </div>
 
@@ -108,9 +109,12 @@
                 <img src="<?php the_post_thumbnail_url() ?>" alt="<?php the_post_thumbnail_caption() ?>" class="w-full w-full object-cover h-40">
             </div>
         </div>
-      
+
 
         <?php get_template_part('partials/episodes'); ?>
+
+        
+        
     </div>
 </main>
 <?php get_footer(); ?>
