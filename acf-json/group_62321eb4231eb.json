@@ -1,6 +1,6 @@
 {
     "key": "group_62321eb4231eb",
-    "title": "Shows",
+    "title": "Show information",
     "fields": [
         {
             "key": "field_62321ec08df6d",
@@ -20,6 +20,22 @@
             "ui": 1,
             "ui_on_text": "Scripted",
             "ui_off_text": "Unscripted"
+        },
+        {
+            "key": "field_62330317cb2be",
+            "label": "Episodes",
+            "name": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "top",
+            "endpoint": 0
         },
         {
             "key": "field_623230b6b4936",
@@ -187,6 +203,57 @@
                     ]
                 }
             ]
+        },
+        {
+            "key": "field_623302c428063",
+            "label": "Press packs",
+            "name": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "top",
+            "endpoint": 0
+        },
+        {
+            "key": "field_623304a978d5a",
+            "label": "Press release",
+            "name": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "top",
+            "endpoint": 0
+        },
+        {
+            "key": "field_623304b978d5b",
+            "label": "Press release content",
+            "name": "press_release_content",
+            "type": "wysiwyg",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "tabs": "all",
+            "toolbar": "full",
+            "media_upload": 1,
+            "delay": 0
         }
     ],
     "location": [
@@ -206,5 +273,5 @@
     "hide_on_screen": "",
     "active": true,
     "description": "",
-    "modified": 1647509998
+    "modified": 1647510831
 }
