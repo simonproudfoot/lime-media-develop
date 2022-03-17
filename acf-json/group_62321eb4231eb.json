@@ -1,0 +1,210 @@
+{
+    "key": "group_62321eb4231eb",
+    "title": "Shows",
+    "fields": [
+        {
+            "key": "field_62321ec08df6d",
+            "label": "Scripted",
+            "name": "scripted",
+            "type": "true_false",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "message": "",
+            "default_value": 0,
+            "ui": 1,
+            "ui_on_text": "Scripted",
+            "ui_off_text": "Unscripted"
+        },
+        {
+            "key": "field_623230b6b4936",
+            "label": "Epsodes",
+            "name": "epsodes",
+            "type": "repeater",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "collapsed": "",
+            "min": 0,
+            "max": 0,
+            "layout": "row",
+            "button_label": "Add episode",
+            "sub_fields": [
+                {
+                    "key": "field_623231b4b4938",
+                    "label": "Episode",
+                    "name": "episode",
+                    "type": "group",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "layout": "row",
+                    "sub_fields": [
+                        {
+                            "key": "field_623232e80af7a",
+                            "label": "Series",
+                            "name": "series",
+                            "type": "select",
+                            "instructions": "",
+                            "required": 1,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "choices": {
+                                "Series 1": "Series 1",
+                                "Series 2": "Series 2",
+                                "Series 3": "Series 3",
+                                "Series 4": "Series 4",
+                                "Series 5": "Series 5",
+                                "Series 6": "Series 6",
+                                "Series 7": "Series 7",
+                                "Series 8": "Series 8",
+                                "Series 9": "Series 9",
+                                "Series 10": "Series 10",
+                                "Series 11": "Series 11",
+                                "Series 12": "Series 12",
+                                "Series 13": "Series 13",
+                                "Series 14": "Series 14",
+                                "Series 15": "Series 15"
+                            },
+                            "default_value": "Series 1",
+                            "allow_null": 0,
+                            "multiple": 0,
+                            "ui": 1,
+                            "ajax": 0,
+                            "return_format": "label",
+                            "placeholder": ""
+                        },
+                        {
+                            "key": "field_6232351c0dcca",
+                            "label": "Episode number",
+                            "name": "episode_number",
+                            "type": "number",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": "",
+                            "min": "",
+                            "max": "",
+                            "step": ""
+                        },
+                        {
+                            "key": "field_623231deb4939",
+                            "label": "Episode title",
+                            "name": "episode_title",
+                            "type": "text",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": "",
+                            "maxlength": ""
+                        },
+                        {
+                            "key": "field_623231f3b493a",
+                            "label": "episode featured image",
+                            "name": "episode_image",
+                            "type": "image",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "return_format": "array",
+                            "preview_size": "medium",
+                            "library": "all",
+                            "min_width": "",
+                            "min_height": "",
+                            "min_size": "",
+                            "max_width": "",
+                            "max_height": "",
+                            "max_size": "",
+                            "mime_types": ""
+                        },
+                        {
+                            "key": "field_623301a17d840",
+                            "label": "images",
+                            "name": "images",
+                            "type": "gallery",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "return_format": "array",
+                            "preview_size": "medium",
+                            "insert": "append",
+                            "library": "uploadedTo",
+                            "min": "",
+                            "max": "",
+                            "min_width": "",
+                            "min_height": "",
+                            "min_size": "",
+                            "max_width": "",
+                            "max_height": "",
+                            "max_size": "",
+                            "mime_types": ""
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "shows"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "modified": 1647509998
+}

@@ -39,7 +39,6 @@ new Vue({
   },
   created() {
     // media = wp-json/wp/v2/media
-    
     if (window.location.href.indexOf("shows") != -1) {
       axios.get('/wp-json/wp/v2/shows?_embed')
         .then((response) => {
