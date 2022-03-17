@@ -11,6 +11,7 @@ new Vue({
       paddingLeft: 0,
       shows: [],
       currentShow: null,
+      seasonDropdown: false,
       currentShowSeasons: [],
       selectedSeason: '',
       showFilter: {
@@ -33,8 +34,6 @@ new Vue({
       fade: true,
       cssEase: 'linear',
       arrows: true,
-
-
     });
   },
   created() {
@@ -87,7 +86,12 @@ new Vue({
     },
   },
   methods: {
-
+    selectSeasonMobile(season){
+      this.selectedSeason = season
+      setTimeout(() => {
+        this.seasonDropdown = false
+      }, 400);
+    },
     populateShowData(shows) {
       this.shows = shows
       let current;

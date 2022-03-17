@@ -1,40 +1,31 @@
 <div v-if="currentShow && currentShow.acf" class="w-full mt-10 sm:flex">
     <h1 class="font-bold text-2xl">Episodes</h1>
 </div>
-<div v-if="currentShow && currentShow.acf" class="relative text-white md:hidden cursor-pointer my-5">
-    <div class=" w-full px-5 py-4 bg-turqDark  relative rounded-lg">
-        Filter by
+
+<!-- mobile -->
+<div class="relative text-white md:hidden cursor-pointer my-5">
+    <div :class="seasonDropdown ? 'bg-turqDark' : 'bg-turq'" class=" w-full px-5 py-4 relative rounded-lg" @click="seasonDropdown = !seasonDropdown">
+        <span>Filter by</span> 
         <img src="<?php bloginfo('template_directory'); ?>/img/icon-arrow.svg" class="absolute  rotate-360 right-7 top-6">
     </div>
-    <div class="rounded-lg bg-greentransparent text-white absolute w-full">
-        <div class="px-5 block  md:hidden cursor-pointer">
+    <div v-if="seasonDropdown" class="rounded-lg bg-greentransparent text-white absolute w-full">
+        <div v-for="season in currentShowSeasons" class="px-5 block  md:hidden cursor-pointer" @click="selectSeasonMobile(season)">
             <div class="w-full py-4 relative">
-                Series 1
+                {{season}}
                 <div class="absolute border-2 p-1 h-6 w-6 rounded-full  right-1 top-3">
-                    <img src="<?php bloginfo('template_directory'); ?>/img/icon-tick.svg" class="mx-auto" style="padding-top: 1px">
-                </div>
-            </div>
-        </div>
-        <div class="px-5 block md:hidden cursor-pointer">
-            <div class="w-full py-4 relative">
-                Series 2
-                <div class="absolute border-2 p-1 h-6 w-6 rounded-full right-1 top-3">
-                    <img src="<?php bloginfo('template_directory'); ?>/img/icon-tick.svg" class="mx-auto" style="padding-top: 1px">
+                    <img v-show="selectedSeason == season" src="<?php bloginfo('template_directory'); ?>/img/icon-tick.svg" class="mx-auto" style="padding-top: 1px">
                 </div>
             </div>
         </div>
     </div>
 </div>
-
-
+<!-- mobile END-->
 <div v-if="currentShow && currentShow.acf" class="my-5 hidden md:flex">
     <button v-for="season in currentShowSeasons" :key="season" :class="selectedSeason == season ? 'bg-turq text-white hover:bg-turqDark' : 'hover:bg-gray-200'" class="px-5 py-2 mr-2 rounded-lg" @click="selectedSeason = season">{{season}}</button>
 </div>
 <div v-if="currentShow && currentShow.acf" class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2 md:gap-4">
-    <div v-for="show in currentShow.acf.epsodes" v-if="show.episode.series == selectedSeason" >
+    <div v-for="show in currentShow.acf.epsodes" v-if="show.episode.series == selectedSeason">
         <!-- v-if="show.episode.series == currentShowSeasons" -->
-
-
         <div class="card">
             <div class="card__imageWrap rounded-lg overflow-hidden bg-grey bg-brandgrey">
                 <img :src="show.episode.episode_image.sizes.medium_large" :alt="show.episode.episode_image.alt" class="w-full w-full object-cover h-40" />

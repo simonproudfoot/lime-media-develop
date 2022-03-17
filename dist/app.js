@@ -16464,6 +16464,7 @@ new Vue({
       paddingLeft: 0,
       shows: [],
       currentShow: null,
+      seasonDropdown: false,
       currentShowSeasons: [],
       selectedSeason: '',
       showFilter: {
@@ -16547,14 +16548,22 @@ new Vue({
     }
   },
   methods: {
-    populateShowData: function populateShowData(shows) {
+    selectSeasonMobile: function selectSeasonMobile(season) {
       var _this3 = this;
+
+      this.selectedSeason = season;
+      setTimeout(function () {
+        _this3.seasonDropdown = false;
+      }, 400);
+    },
+    populateShowData: function populateShowData(shows) {
+      var _this4 = this;
 
       this.shows = shows;
       var current;
       var seasons = [];
       shows.forEach(function (element) {
-        current = element.slug == _this3.pageSlug ? element : [];
+        current = element.slug == _this4.pageSlug ? element : [];
       });
 
       if (current.acf) {
